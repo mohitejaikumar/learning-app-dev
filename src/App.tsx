@@ -1,13 +1,14 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {ScrollView, SafeAreaView} from 'react-native';
-import PasswordGenerator from './components/PasswordGenerator';
+import MainPage from './components/MainPage';
 
 function App() {
   return (
     <>
-      <SafeAreaView>
+      <SafeAreaView style={{marginBottom: 10}}>
         <ScrollView>
-          <PasswordGenerator />
+          <MainPage />
         </ScrollView>
       </SafeAreaView>
     </>
