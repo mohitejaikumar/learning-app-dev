@@ -1,30 +1,14 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
-import {Image, ImageSourcePropType, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {ScreenWidth} from 'react-native-elements/dist/helpers';
 import Icon from 'react-native-vector-icons/AntDesign';
 import CardWrapper from './CardWrapper';
 import {Divider} from 'react-native-elements';
 import AtmImage from '../../assets/atm3.jpg';
-import type {PropsWithChildren} from 'react';
-import GradientText from './GradientText';
 import {formatPrice} from '../helper/priceFormat';
-
-type ImageProps = PropsWithChildren<{
-  imageURL: ImageSourcePropType;
-}>;
-
-const CustomImage = ({imageURL}: ImageProps) => {
-  return (
-    <View>
-      <Image
-        source={imageURL}
-        style={{width: 160, height: 100, borderRadius: 10}}
-      />
-    </View>
-  );
-};
+import {CustomCardImage} from './CustomImage';
 
 export default function RecommendedCard() {
   return (
@@ -56,7 +40,12 @@ export default function RecommendedCard() {
       </View>
       <CardWrapper>
         <View style={{flexDirection: 'row', gap: 12}}>
-          <CustomImage imageURL={AtmImage} />
+          <CustomCardImage
+            imageURL={AtmImage}
+            width={160}
+            height={100}
+            borderRadius={10}
+          />
           <View style={{justifyContent: 'space-evenly', gap: 20}}>
             <Text style={{fontWeight: 'bold'}}>RECOMMENDED</Text>
             <View>

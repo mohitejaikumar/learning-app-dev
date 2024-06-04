@@ -1,16 +1,24 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {ScrollView, SafeAreaView} from 'react-native';
-import MainPage from './components/MainPage';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import HomeScreen from './components/Home';
+import RecommendedCreditCard from './components/RecommendedCreditCard';
+
+const Stack = createNativeStackNavigator();
 
 function App() {
   return (
     <>
-      <SafeAreaView style={{marginBottom: 10}}>
-        <ScrollView>
-          <MainPage />
-        </ScrollView>
-      </SafeAreaView>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen
+            name="Recommended Credit Card"
+            component={RecommendedCreditCard}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
     </>
   );
 }
